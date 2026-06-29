@@ -1,0 +1,87 @@
+:root{
+    --dark-color:#27273f;
+    --bg-color:#fafafa;
+    --btn-color-1:#4d96a7;
+    --btn-color-2:#8460b2;
+    --text-color:#726f7c;
+}
+html {font-size: 16px; font-family:sans-serif;scroll-behavior: smooth;box-sizing: border-box;line-height:1.5;}
+*, *::before, *::after {box-sizing: inherit;margin: 0;padding: 0;}
+
+body{background-color:var(--bg-color);}
+img{vertical-align: middle;max-width:100%;height:auto;}
+h3{font-size:1.5rem;font-weight:800;color:var(--dark-color)}
+h1{font-size:2.5rem;color:var(--dark-color);font-weight:800;line-height:1.15;}
+.desc-text{color:var(--text-color);font-weight:400}
+.article-heading{font-size:2rem;font-weight:800;line-height:1.15;}
+.dark-color{color:var(--dark-color)}
+.light-color{color:#fff;}
+.container{padding:0 2rem;margin:0 auto;max-width:90rem;}
+
+/* Button Behaviour */
+.btn{font-size:1rem;padding:1em 2.5em;border-radius:60px;border:0;color:#fff;transition:background 0.3s ease,0.3s ease;}
+.btn span{opacity:0.8;margin-left:0.2rem;}
+.download-btn{background-color:var(--btn-color-1);}
+.docs-btn{background-color: var(--btn-color-2);}
+.btn:hover{transform:scale(1.05,1.05)}
+.download-btn:hover{background-color:#418392;}
+.docs-btn:hover{background-color:#715497;}
+
+header{overflow:hidden;}
+header .head{padding:2rem;text-align:center;display:flex;align-items:center;justify-content: center;gap:0.5rem;}
+header .main-article{display:grid;gap:4rem;grid-template-columns:auto auto auto;justify-content:space-between;margin:4rem 0;}
+header .main-article .content{text-align:center;padding:0 2.5rem;margin:0 auto;}
+header .main-article .content p{margin:2rem 0;}
+header .main-article .content .btns{display:flex;flex-flow:row wrap;gap:1.5rem;justify-content: center;margin-top:1.5rem;}
+header .main-article .tablet-hero{display:none;}
+
+
+
+
+.section-one{margin:6rem 0;position:relative;}
+.offset{background-color:var(--bg-color);font-weight:800;color:var(--text-color);font-size:0.8rem;width:3.5rem;height:3.5rem;line-height:3.5rem;border-radius:50%;display:inline-block;text-align:center;border:1px solid #ddd;position:absolute;top:-1.5rem;left:50%;transform:translateX(-50%)}
+.offset::before{
+    content:"";
+    position:absolute;
+    top:-4.5rem;
+    left:calc(1.725rem - 1px);
+    width:1px;
+    height:4.5rem;
+    background-color:#ddd;
+}
+
+.section-one .pics-section{padding:6rem 0;display:grid;grid-template-columns:repeat(4, 1fr);gap:1rem;}
+.section-one .pics-section img{border-radius:0.5rem;transition:0.5s ease;}
+.section-one .pics-section img:hover{filter:grayscale(50%);transform:scale(1.05,1.05)}
+.section-one .content{text-align:center;max-width:35rem;margin:0 auto;}
+.section-one .content .content-desc{color:var(--btn-color-1);text-transform:uppercase;letter-spacing:5px;font-weight:800;}
+.section-one .content .article-heading{margin:1rem 0 1.5rem;}
+
+footer{position:relative;background-image:url('pics/desktop/image-footer.jpg');background-color:var(--btn-color-1);background-size:100% 100%;background-repeat:no-repeat;}
+footer .footer-content{position:relative;padding:8rem 0;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:4rem;}
+footer::before{
+    content:'';
+    width:100%;
+    height:100%;
+    background-color:var(--btn-color-1);
+    position:absolute;
+    filter:opacity(.8);
+}
+
+
+@media screen and (max-width: 1024px) {
+    .main-article{grid-template-columns:1fr !important;}
+    .tablet-hero{display:block !important;width:100%;}
+    .right-img, .left-img{display:none !important;}
+    .offset::before{content:'';display:none;}
+    .footer-content{display:flex !important;flex-flow:column wrap;text-align: center;max-width:75%;gap:2rem !important;margin:0 auto;}
+    footer{background-image: url('pics/mobile/image-footer.jpg');}
+}
+
+@media screen and (max-width: 767px) {
+.main-article .content{max-width:100% !important;}
+.btns{display:block !important;}
+.btns .btn{display:block;margin:1em auto;}
+.section-one .pics-section{grid-template-columns:1fr 1fr;}
+footer{background-image: url('pics/mobile/image-footer.jpg');}
+}
